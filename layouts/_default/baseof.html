@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <div id="{{ i18n "content" | urlize }}">
+        {{- partial "preloader.html" . -}}
         {{- block "main" . }}{{- end }}
-        </div>
         {{- partial "footer.html" . -}}
+        {{- partial "script.html" . -}}
     </body>
 </html>

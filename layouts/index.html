@@ -1,17 +1,8 @@
-{{ partial "header.html" . }}
-
-{{ partial "preloader.html" . }}
-        
-{{ partial "navigation.html" . }}
-
-{{ partial "hero-area.html" . }}
-
-{{ partial "about.html" . }}
-
-{{ partial "service.html" . }}
-
-{{ partial "call-to-action.html" . }}
-
-{{ partial "contact.html" . }}
-
-{{ partial "footer.html" . }}
+{{ define "main" }}
+  {{ partial "navigation_dynamic" . }}
+  {{ partial "hero-area.html" . }}
+  {{ partial "about.html" . }}
+  {{ partial "service.html" . }}
+  {{ partial "social.html" . }}
+  {{ partial "contact.html" . }}
+{{ end }}

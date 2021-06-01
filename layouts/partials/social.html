@@ -1,0 +1,23 @@
+{{ if .Site.Params.social.enable }}
+    {{"<!-- Social Section -->" | safeHTML}}
+    <section class="social" style='background-image: url("{{ with .Site.Params.social.bg }}{{.}}{{ end }}")' >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow text-center">
+                    <div class="block">
+                        {{ with .Site.Params.social.title }}
+                            <h2>{{ . }}</h2>
+                        {{ end }}
+                        {{ range .Site.Params.social.socialItem }}
+                            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="{{ .delay }}">
+                                <div class="block">
+                                    <i class="{{ .icon }}"></i>
+                                </div>
+                            </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}

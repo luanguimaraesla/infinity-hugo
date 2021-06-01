@@ -1,0 +1,9 @@
+{{ with .Params.tags }}
+<div class="metadata">
+  <i class="tf-ion-ios-pricetags-outline"></i>
+  {{ range . }}
+  {{ $href := print (absURL "tags/") (urlize .) }}
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="{{ $href }}">{{ . }}</a>
+  {{ end }}
+</div>
+{{ end }}
