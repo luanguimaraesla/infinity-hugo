@@ -4,23 +4,25 @@
         <div class="container">
             <div class="row">
                 <div class="about-slider">
-                  {{ range .Site.Params.about.sliderItem }}
+                  {{ $root := .Site.GetPage .Site.Params.about.sliderRootPage }}
+                  {{ range $root.Pages.ByPublishDate.Reverse }}
                     <div>
                       <div class="col-md-7 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">
                           <div class="content">
                               <div class="sub-heading">
-                              {{ with .title }}
-                                  <h3>{{ . }}</h3>
-                              {{ end }}
+                              <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                               </div>
-                              {{ with .text }}
+                              {{ with .Params.abstract }}
                                   <p>{{ . | markdownify }}</p>
                               {{ end }}
                           </div>
                       </div>
+                      {{ $relLink := .RelPermalink }}
+                      {{ with .Params.image }}
                       <div class="col-md-5 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">
-                              <img src="{{ .image }}" alt="{{ i18n "sliderImage" }}">
+                              <img src="{{ printf "%s/%s" $relLink . }}" alt="{{ i18n "sliderImage" }}">
                       </div>
+                      {{ end }}
                     </div>
                   {{ end }}
                 </div>

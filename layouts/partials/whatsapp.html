@@ -1,0 +1,37 @@
+{{ if .Site.Params.whatsapp.enable }}
+    {{"<!-- Call To Action Section -->" | safeHTML}}
+    <section class="wpp" style='background-image: url("{{ with .Site.Params.whatsapp.bg }}{{.}}{{ end }}")' >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow text-center">
+                    <div class="block">
+                        {{ with .Site.Params.whatsapp.title }}
+                            <p>{{ . }}</p>
+                        {{ end }}
+                        {{ with .Site.Params.whatsapp.profile }}
+                            <h2>{{ . }}</h2>
+                        {{ end }}
+                        <div class="col-lg-6 offset-lg-3">
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="{{ .Site.Params.whatsapp.message }}"}} readonly>
+                                <span class="input-group-btn">
+                                  {{ $urlEncodedMessage := strings.Replace .Site.Params.whatsapp.message " " "%20" }}
+                                  {{ $phone := .Site.Params.whatsapp.phone }}
+                                  <button
+                                    class="btn btn-default btn-subscription"
+                                    type="button"
+                                    onclick="location.href='https://wa.me/{{ $phone }}?text={{ $urlEncodedMessage }}';"
+                                  >
+                                    <i class="tf-ion-social-whatsapp" aria-hidden="true"></i>
+                                    Iniciar conversa
+                                  </button>
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}

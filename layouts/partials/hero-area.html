@@ -15,13 +15,11 @@
                             {{ . }}
                         </p>
                         {{ end }}
-                        {{ with .Site.Params.hero.btnText }}
                         <div class="wow fadeInDown" data-wow-delay="0.7s" data-wow-duration=".7s">
-                            <a class="btn btn-home" href="#{{ i18n "about" | urlize }}" role="button">
-                                {{ . }}
+                          <a class="btn btn-home" href="{{ .Site.Params.hero.btnLink }}" role="button">
+                                {{ .Site.Params.hero.btnText }}
                             </a>
                         </div>
-                        {{ end }}
                     </div>
                 </div>
                 {{ if not .Site.Params.hero.disableCountdown }}
@@ -34,28 +32,28 @@
                                         <div class="digit">0</div>
                                         <div class="digit">0</div>
                                         <div class="digit">0</div>
-                                        <span class="dash_title">{{i18n "days" }}</span>
+                                        <span class="dash_title">Dias</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="dash hours_dash">
                                         <div class="digit">0</div>
                                         <div class="digit">0</div>
-                                        <span class="dash_title">{{i18n "hours" }}</span>
+                                        <span class="dash_title">Horas</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="dash minutes_dash">
                                         <div class="digit">0</div>
                                         <div class="digit">0</div>
-                                        <span class="dash_title">{{i18n "minutes" }}</span>
+                                        <span class="dash_title">Minutos</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="dash seconds_dash">
                                         <div class="digit">0</div>
                                         <div class="digit">0</div>
-                                        <span class="dash_title">{{i18n "seconds" }}</span>
+                                        <span class="dash_title">Segundos</span>
                                     </div>
                                 </li>
                             </ul>

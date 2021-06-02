@@ -512,27 +512,192 @@ a:active {
 }
 
 .social .block h2 {
+  padding-bottom: 15px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 40px;
+  color: #fff;
+}
+
+.social .card-item {
+    display: inline-block;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.social .card-item .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.7s;
+    z-index: 1;
+}
+
+.social .card-item:nth-child(1) .icon {
+    background: #3f729b;
+}
+
+.social .card-item:nth-child(2) .icon {
+    background: #4aada9;
+}
+
+.social .card-item:nth-child(3) .icon {
+    background: #e2725b;
+}
+
+
+.social .card-item .icon .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.social i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.social .card-item .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.social .card-item .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.social .card-item:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0px);
+}
+
+.social .card-item .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.social .card-item:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.social .card-item .face.face1 .content i{
+    max-width: 100px;
+}
+
+.social .card-item .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-100px);
+}
+
+.social .card-item:hover .face.face2{
+    transform: translateY(0);
+}
+
+.social .card-item .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+
+.social .card-item .face.face2 .content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+} 
+
+.social a {
+    text-decoration: none;
+    color: #414141;
+}
+
+/*--
+    whatsapp start
+--*/
+.wpp {
+  padding: 90px 0px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.wpp:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.wpp .block h2 {
   font-size: 30px;
   margin-bottom: 6px;
   font-weight: 600;
   color: #fff;
 }
 
-.social .block p {
+.wpp .block p {
   padding-right: 30px;
   color: #fff;
 }
 
-.social .block {
-  margin-bottom: 50px;
+.wpp .block .input-group {
+  margin-top: 30px;
 }
 
-.social .block i {
-  font-size: 100px;
-  display: inline-block;
-  margin-bottom: 15px;
-  margin-top: 20px;
-  color: #1bafb4;
+.wpp .block .input-group input {
+  height: 50px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.wpp .block .input-group .btn-subscription {
+  height: 50px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: #1bafb4;
+  padding: 0px 35px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.wpp .block .input-group i {
+  font-size: 20px;
 }
 
 .input-field .form-control {
@@ -627,6 +792,11 @@ footer p a:hover {
   margin-bottom:20px;
 }
 
+#article .text blockquote p {
+  display: inline;
+}
+
+
 #article .text p {
   margin-top: 1.2em;
   margin-bottom: 1.2em;
@@ -650,41 +820,7 @@ footer p a:hover {
   vertical-align: -0.4em;
 }
 
-#article .text blockquote p {
-  display: inline;
-}
-
-#article .note {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  line-height: 18px;
-  overflow: hidden;
-  padding: 12px;
-}
-
-#article .note li {
-  position: relative;
-  list-style-type: none;
-  padding-left: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-#article .note li:before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: -2px;
-    width: 5px;
-    height: 11px;
-    border-width: 0 2px 2px 0;
-    border-style: solid;
-    border-color: #00a8a8;
-    transform-origin: bottom left;
-    transform: rotate(45deg);
-}
-
-#article img {
+#article .heading-image img {
   width: 100%;
   height: 300px;
   object-fit: cover;

@@ -1,0 +1,10 @@
+<div class="photo">
+  <figure>
+    {{ with .Get "src" }}
+    <img class=scaled src="{{ . }}">
+    {{ end }}
+    {{ with .Get "subtitle" }}
+    <figcaption>{{ . }}</figcaption>
+    {{ end }}
+  </figure>
+</div>
