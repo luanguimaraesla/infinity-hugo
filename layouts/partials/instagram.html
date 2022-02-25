@@ -1,0 +1,22 @@
+{{ if .Site.Params.instagram.enable }}
+    {{"<!-- Call To Action Section -->" | safeHTML}}
+    <section class="insta">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow text-center">
+                    <div class="items">
+                      {{ range $photo := .Site.Params.instagram.photos }}
+                      <div class="item">
+                        <blockquote class='instagram-media' data-instgrm-version='14'>
+                          <!-- replace this href with the link to the post -->
+                          <a href='https://www.instagram.com/p/{{ $photo }}/' ></a>
+                        </blockquote>
+                      </div>
+                      {{ end }}
+                      <script src="//www.instagram.com/embed.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}

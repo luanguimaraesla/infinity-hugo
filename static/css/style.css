@@ -826,3 +826,36 @@ footer p a:hover {
   object-fit: cover;
   margin-bottom: 50px;
 }
+
+/*--
+    instagram start
+--*/
+
+.insta .container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.insta .row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.insta .items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+.insta .item {
+  margin: 10px;
+}
+
+.insta blockquote {
+  width: 96%;
+}
