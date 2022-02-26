@@ -6,7 +6,7 @@
                 <div class="about-slider">
                   {{ $root := .Site.GetPage .Site.Params.about.sliderRootPage }}
                   {{ range $root.Pages.ByPublishDate.Reverse }}
-                    <div>
+                    <div class="item" >
                       <div class="col-md-7 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">
                           <div class="content">
                               <div class="sub-heading">

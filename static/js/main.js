@@ -4,29 +4,17 @@ $(window).load(function () {
 
 $(document).ready(function () {
 
-
     new WOW().init();
 
 
-    $('#top-nav').onePageNav({
-        currentClass: 'current',
-        changeHash: true,
-        scrollSpeed: 1200
-    });
-
-
-    //animated header class
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        //console.log(scroll);
-        if (scroll > 200) {
-            //console.log('a');
-            $(".navigation").addClass("animated");
-        } else {
-            //console.log('a');
-            $(".navigation").removeClass("animated");
-        }
-    });
+    const navLinks = document.querySelectorAll('.nav-item')
+    const menuToggle = document.getElementById('navbarText')
+    navLinks.forEach((l) => {
+        l.addEventListener('click', () => {
+          const bsCollapse = new bootstrap.Collapse(menuToggle)
+          bsCollapse.toggle()
+        })
+    })
 
     
 
@@ -36,19 +24,20 @@ $(document).ready(function () {
         autoPlay: 5000,
     });
 
-    $year = $('#countdown_dashboard').data('year');
-    $month = $('#countdown_dashboard').data('month');
-    $day = $('#countdown_dashboard').data('day');
-    $('#countdown_dashboard').countDown({
-        targetDate: {
-            'day': $day,
-            'month': $month,
-            'year': $year,
-            'hour': 23,
-            'min': 59,
-            'sec': 59,
-        },
-        omitWeeks: true
-    });
-
+    if ($('#countdown_dashboard').length) {
+      $year = $('#countdown_dashboard').data('year');
+      $month = $('#countdown_dashboard').data('month');
+      $day = $('#countdown_dashboard').data('day');
+      $('#countdown_dashboard').countDown({
+          targetDate: {
+              'day': $day,
+              'month': $month,
+              'year': $year,
+              'hour': 23,
+              'min': 59,
+              'sec': 59,
+          },
+          omitWeeks: true
+      });
+    }
 });

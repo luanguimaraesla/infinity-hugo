@@ -375,73 +375,51 @@ a:active {
   }
 }
 
-/* .hero-area  */
-.navigation {
-  background-color: transparent;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -moz-transition: all 0.3s ease-in-out 0s;
-  -ms-transition: all 0.3s ease-in-out 0s;
-  -o-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-  padding: 10px 50px;
-  margin: 0;
-  border: 0;
+.navbar-nav .nav-link {
+    display: block;
+    padding-top: 1.6rem;
+    padding-bottom: 1.3rem;
 }
 
-.navigation-static {
-  background-color: #fff;
-  box-shadow: 0 2px 7px 0px rgba(142, 142, 142, 0.15);
-}
-
-.navigation-static .menu a {
-  color: #666;
+.navbar img {
+  width: 75px;
+  height: 75px;
 }
 
 .navigation .navbar-brand {
-  padding-top: 5px;
-  display: inline-block;
-}
-
-.navigation .navbar-toggler {
-  background: #fff;
-  outline: none;
-  border-radius: 0;
-  float: right;
-}
-
-.navigation .navbar-toggler i {
-  font-size: 22px;
-}
-
-.navigation.animated {
-  background-color: #fff;
-  box-shadow: 0 2px 7px 0px rgba(142, 142, 142, 0.15);
-}
-
-.navigation.animated .menu a {
-  color: #666;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .menu li a {
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
+  color: #666;
 }
 
-.menu li a:hover,
-.menu li a:focus {
-  background: none;
+.navbar-toggler {
+  background: transparent;
+  outline: none;
+  border-radius: 0px;
+  position: absolute;
+  right: 50px;
+  top: 26px;
 }
+
 
 /*--
     service start
 --*/
 .service {
-  text-align: center;
+  display: flex;
+  align-content: center;
+}
+
+.service .heading {
+  width: 100%;
 }
 
 .service .block {
-  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .service .block i {
@@ -471,6 +449,21 @@ a:active {
 /*--
     About start
 --*/
+
+.about .item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about .row .single-button-container {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
 .about .content h3 {
   font-size: 26px;
   font-weight: 300;
@@ -483,11 +476,6 @@ a:active {
 .about .about-slider img {
   width: 100%;
   height: auto;
-}
-
-.about .single-button-container {
-  margin-top: 50px;
-  display: grid;
 }
 
 /*--
@@ -831,6 +819,10 @@ footer p a:hover {
     instagram start
 --*/
 
+.insta {
+  position: relative;
+}
+
 .insta .container {
   display: flex;
   justify-content: center;
@@ -853,9 +845,45 @@ footer p a:hover {
 }
 
 .insta .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-size: cover;
   margin: 10px;
 }
 
+.insta .item-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .6);
+  background-size: cover;
+  padding: 10px;
+  margin: 15px;
+}
+
+.insta .item i {
+  font-size: 100px;
+  color: rgba(0, 0, 0, .6);
+}
+
+.insta .item a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .8);
+}
+
+.insta .iframe {
+  display: flex;
+  align-content: center;
+  width: 100%;
+}
+
 .insta blockquote {
-  width: 96%;
+  width: 100%;
 }
