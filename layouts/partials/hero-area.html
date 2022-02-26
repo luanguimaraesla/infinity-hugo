@@ -16,9 +16,17 @@
                         </p>
                         {{ end }}
                         <div class="wow fadeInDown" data-wow-delay="0.7s" data-wow-duration=".7s">
-                          <a class="btn btn-home" href="{{ .Site.Params.hero.btnLink }}" role="button">
-                                {{ .Site.Params.hero.btnText }}
+                          {{ if .Site.Params.hero.btnImage }}
+                            <div class="btn-image-container">
+                              <a class="btn-image-link" href="{{ .Site.Params.hero.btnLink }}">
+                                <img class="btn-image" src="{{ .Site.Params.hero.btnImage }}">
+                              </a>
+                            <div>
+                          {{ else }}
+                            <a class="btn btn-home" href="{{ .Site.Params.hero.btnLink }}" role="button">
+                                  {{ .Site.Params.hero.btnText }}
                             </a>
+                          {{ end }}
                         </div>
                     </div>
                 </div>
